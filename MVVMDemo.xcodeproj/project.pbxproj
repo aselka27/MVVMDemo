@@ -17,16 +17,19 @@
 		34045F5029C6016500E23014 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34045F4F29C6016500E23014 /* AppCoordinator.swift */; };
 		34045F5229C6038B00E23014 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34045F5129C6038B00E23014 /* MainCoordinator.swift */; };
 		343E93E329C6B72D000D9E92 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E93E229C6B72D000D9E92 /* Comment.swift */; };
+		3452E86D29CC606F003DC263 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3452E86C29CC606F003DC263 /* DatePickerViewController.swift */; };
+		3494C45929CDAB5A00B74F95 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3494C45829CDAB5A00B74F95 /* UserDefaultsService.swift */; };
 		3495BEA629C17A2B00AE8A25 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3495BEA529C17A2B00AE8A25 /* SnapKit */; };
 		3495BEA829C17D5200AE8A25 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BEA729C17D5200AE8A25 /* LoginViewModel.swift */; };
 		3495BEAA29C17D6D00AE8A25 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BEA929C17D6D00AE8A25 /* Extensions.swift */; };
 		3495BEAC29C18DDB00AE8A25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BEAB29C18DDB00AE8A25 /* User.swift */; };
-		3495BECC29C41B3600AE8A25 /* LoginCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BECB29C41B3600AE8A25 /* LoginCombineViewModel.swift */; };
-		3495BECF29C439E600AE8A25 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BECE29C439E600AE8A25 /* Product.swift */; };
-		3495BED329C43B1600AE8A25 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BED229C43B1600AE8A25 /* TableViewController.swift */; };
-		3495BED529C43BD300AE8A25 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BED429C43BD300AE8A25 /* ProductTableViewCell.swift */; };
 		34B3F40029C826570011E4D7 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3F3FF29C826570011E4D7 /* CommentsViewController.swift */; };
 		34B3F40229C827980011E4D7 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3F40129C827980011E4D7 /* CommentsViewModel.swift */; };
+		34B3F40829C8C9800011E4D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 34B3F40729C8C9800011E4D7 /* Alamofire */; };
+		34B3F42D29CADBEE0011E4D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3F42C29CADBEE0011E4D7 /* RegisterViewController.swift */; };
+		34B3F42F29CADC920011E4D7 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3F42E29CADC920011E4D7 /* UserInfoTableViewCell.swift */; };
+		34B3F43129CAED3F0011E4D7 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3F43029CAED3F0011E4D7 /* Input.swift */; };
+		34B3F43329CB0FBB0011E4D7 /* DynamicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3F43229CB0FBB0011E4D7 /* DynamicTableView.swift */; };
 		34F5005E29C081CC008CF7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5005D29C081CC008CF7B8 /* AppDelegate.swift */; };
 		34F5006029C081CC008CF7B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5005F29C081CC008CF7B8 /* SceneDelegate.swift */; };
 		34F5006229C081CC008CF7B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5006129C081CC008CF7B8 /* LoginViewController.swift */; };
@@ -45,15 +48,17 @@
 		34045F4F29C6016500E23014 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		34045F5129C6038B00E23014 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		343E93E229C6B72D000D9E92 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		3452E86C29CC606F003DC263 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		3494C45829CDAB5A00B74F95 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		3495BEA729C17D5200AE8A25 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3495BEA929C17D6D00AE8A25 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3495BEAB29C18DDB00AE8A25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		3495BECB29C41B3600AE8A25 /* LoginCombineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCombineViewModel.swift; sourceTree = "<group>"; };
-		3495BECE29C439E600AE8A25 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		3495BED229C43B1600AE8A25 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		3495BED429C43BD300AE8A25 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		34B3F3FF29C826570011E4D7 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		34B3F40129C827980011E4D7 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		34B3F42C29CADBEE0011E4D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		34B3F42E29CADC920011E4D7 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		34B3F43029CAED3F0011E4D7 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		34B3F43229CB0FBB0011E4D7 /* DynamicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableView.swift; sourceTree = "<group>"; };
 		34F5005A29C081CC008CF7B8 /* MVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F5005D29C081CC008CF7B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34F5005F29C081CC008CF7B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,25 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3495BEA629C17A2B00AE8A25 /* SnapKit in Frameworks */,
+				34B3F40829C8C9800011E4D7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		34045F4029C5897400E23014 /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				34B3F3FE29C826470011E4D7 /* Comments */,
-				34045F4729C5AE3100E23014 /* Model */,
-				34045F4129C58B5300E23014 /* NetworkService */,
-				34045F4C29C6013F00E23014 /* Coordinator */,
-				34045F4829C5AE3C00E23014 /* Auth */,
-				34045F4629C5AE1C00E23014 /* Contacts */,
-			);
-			path = Demo;
-			sourceTree = "<group>";
-		};
 		34045F4129C58B5300E23014 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +105,7 @@
 				34045F3E29C5874600E23014 /* Contact.swift */,
 				3495BEAB29C18DDB00AE8A25 /* User.swift */,
 				343E93E229C6B72D000D9E92 /* Comment.swift */,
+				34B3F43029CAED3F0011E4D7 /* Input.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,8 +113,8 @@
 		34045F4829C5AE3C00E23014 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3495BEA729C17D5200AE8A25 /* LoginViewModel.swift */,
-				34F5006129C081CC008CF7B8 /* LoginViewController.swift */,
+				3452E86F29CDA7B0003DC263 /* Register */,
+				3452E86E29CDA7A8003DC263 /* Login */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -147,22 +141,31 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		3495BECA29C41B1600AE8A25 /* Combine */ = {
+		3452E86E29CDA7A8003DC263 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3495BECB29C41B3600AE8A25 /* LoginCombineViewModel.swift */,
+				34F5006129C081CC008CF7B8 /* LoginViewController.swift */,
+				3495BEA729C17D5200AE8A25 /* LoginViewModel.swift */,
 			);
-			path = Combine;
+			path = Login;
 			sourceTree = "<group>";
 		};
-		3495BECD29C439DA00AE8A25 /* Shop */ = {
+		3452E86F29CDA7B0003DC263 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				3495BECE29C439E600AE8A25 /* Product.swift */,
-				3495BED229C43B1600AE8A25 /* TableViewController.swift */,
-				3495BED429C43BD300AE8A25 /* ProductTableViewCell.swift */,
+				34B3F42E29CADC920011E4D7 /* UserInfoTableViewCell.swift */,
+				34B3F42C29CADBEE0011E4D7 /* RegisterViewController.swift */,
 			);
-			path = Shop;
+			path = Register;
+			sourceTree = "<group>";
+		};
+		3467ACB329CC53CD005258EE /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				34B3F43229CB0FBB0011E4D7 /* DynamicTableView.swift */,
+				3452E86C29CC606F003DC263 /* DatePickerViewController.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		34B3F3FE29C826470011E4D7 /* Comments */ = {
@@ -193,14 +196,35 @@
 		34F5005C29C081CC008CF7B8 /* MVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				34045F4029C5897400E23014 /* Demo */,
-				3495BECD29C439DA00AE8A25 /* Shop */,
-				3495BECA29C41B1600AE8A25 /* Combine */,
+				34045F4729C5AE3100E23014 /* Model */,
+				34045F4C29C6013F00E23014 /* Coordinator */,
+				34FE3D4029E65030007CE747 /* Services */,
+				34FE3D4129E65120007CE747 /* Flow */,
+				3467ACB329CC53CD005258EE /* Reusable */,
 				34045F4929C5C27800E23014 /* Resources */,
 				3495BEA929C17D6D00AE8A25 /* Extensions.swift */,
 				34F5006B29C081CE008CF7B8 /* Info.plist */,
 			);
 			path = MVVMDemo;
+			sourceTree = "<group>";
+		};
+		34FE3D4029E65030007CE747 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3494C45829CDAB5A00B74F95 /* UserDefaultsService.swift */,
+				34045F4129C58B5300E23014 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		34FE3D4129E65120007CE747 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				34045F4829C5AE3C00E23014 /* Auth */,
+				34045F4629C5AE1C00E23014 /* Contacts */,
+				34B3F3FE29C826470011E4D7 /* Comments */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +245,7 @@
 			name = MVVMDemo;
 			packageProductDependencies = (
 				3495BEA529C17A2B00AE8A25 /* SnapKit */,
+				34B3F40729C8C9800011E4D7 /* Alamofire */,
 			);
 			productName = MVVMDemo;
 			productReference = 34F5005A29C081CC008CF7B8 /* MVVMDemo.app */;
@@ -252,6 +277,7 @@
 			mainGroup = 34F5005129C081CC008CF7B8;
 			packageReferences = (
 				3495BEA429C17A2B00AE8A25 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				34B3F40629C8C9800011E4D7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 34F5005B29C081CC008CF7B8 /* Products */;
 			projectDirPath = "";
@@ -287,19 +313,21 @@
 				34045F4E29C6015700E23014 /* AuthCoordinator.swift in Sources */,
 				34045F3B29C5871C00E23014 /* ContactsViewController.swift in Sources */,
 				34045F5029C6016500E23014 /* AppCoordinator.swift in Sources */,
-				3495BECF29C439E600AE8A25 /* Product.swift in Sources */,
 				343E93E329C6B72D000D9E92 /* Comment.swift in Sources */,
-				3495BECC29C41B3600AE8A25 /* LoginCombineViewModel.swift in Sources */,
+				34B3F43129CAED3F0011E4D7 /* Input.swift in Sources */,
+				34B3F43329CB0FBB0011E4D7 /* DynamicTableView.swift in Sources */,
 				34045F4529C58D3A00E23014 /* ContactTableViewCell.swift in Sources */,
+				34B3F42F29CADC920011E4D7 /* UserInfoTableViewCell.swift in Sources */,
+				3452E86D29CC606F003DC263 /* DatePickerViewController.swift in Sources */,
 				34045F4329C58B6300E23014 /* NetworkService.swift in Sources */,
 				3495BEA829C17D5200AE8A25 /* LoginViewModel.swift in Sources */,
+				34B3F42D29CADBEE0011E4D7 /* RegisterViewController.swift in Sources */,
 				3495BEAC29C18DDB00AE8A25 /* User.swift in Sources */,
+				3494C45929CDAB5A00B74F95 /* UserDefaultsService.swift in Sources */,
 				34F5006229C081CC008CF7B8 /* LoginViewController.swift in Sources */,
 				34045F5229C6038B00E23014 /* MainCoordinator.swift in Sources */,
 				34F5005E29C081CC008CF7B8 /* AppDelegate.swift in Sources */,
 				34B3F40229C827980011E4D7 /* CommentsViewModel.swift in Sources */,
-				3495BED529C43BD300AE8A25 /* ProductTableViewCell.swift in Sources */,
-				3495BED329C43B1600AE8A25 /* TableViewController.swift in Sources */,
 				34F5006029C081CC008CF7B8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +546,14 @@
 				kind = branch;
 			};
 		};
+		34B3F40629C8C9800011E4D7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -525,6 +561,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3495BEA429C17A2B00AE8A25 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		34B3F40729C8C9800011E4D7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B3F40629C8C9800011E4D7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

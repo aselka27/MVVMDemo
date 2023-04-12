@@ -1,19 +1,21 @@
 //
-//  CommentsViewController.swift
+//  ContactsViewController.swift
 //  MVVMDemo
 //
-//  Created by саргашкаева on 20.03.2023.
+//  Created by саргашкаева on 18.03.2023.
 //
+
 
 import UIKit
 import SnapKit
 
-class CommentsViewController: UIViewController {
+class ContactsViewController: UIViewController {
     
     
-    let viewModel: CommentsViewModel
+    private let viewModel: ContactsViewModel
     
-    private lazy var commentsTableView: UITableView = {
+    
+    private lazy var contactsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: ContactTableViewCell.identifier)
         tableView.showsVerticalScrollIndicator = false
@@ -22,8 +24,7 @@ class CommentsViewController: UIViewController {
         return tableView
     }()
     
-    
-    init(viewModel: CommentsViewModel) {
+    init(viewModel: ContactsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,43 +35,53 @@ class CommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setConstraints()
-        
+        title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
-        viewModel.fetchComments { [weak self] in
+       // navigationItem.hidesBackButton = true
+        viewModel.fetchContacts { [weak self] in
             DispatchQueue.main.async {
-                self?.commentsTableView.reloadData()
-                self?.title = "\(self?.viewModel.comments?.first?.userId ?? 0)"
+                self?.contactsTableView.reloadData()
             }
         }
+        setConstraints()
+//        navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(didTapLogout))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(didTapLogout))
     }
-    
+
     private func setConstraints() {
         view.backgroundColor = .white
-        view.addSubview(commentsTableView)
-        commentsTableView.snp.makeConstraints { make in
+        view.addSubview(contactsTableView)
+        contactsTableView.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
         }
     }
-
+    
+    @objc private func didTapLogout() {
+        viewModel.logout()
+    }
 }
 
 
-extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
+extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.comments?.count ?? 0
+        return viewModel.contacts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.identifier, for: indexPath) as! ContactTableViewCell
-        guard let contact = viewModel.comments?[indexPath.row] else { return ContactTableViewCell() }
-        cell.configureComments(with: contact)
+        guard let contact = viewModel.contacts?[indexPath.row] else { return ContactTableViewCell() }
+        cell.configure(with: contact)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
-}
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let contact = viewModel.contacts?[indexPath.row] else { return }
+        viewModel.showContacts(userId: contact.id)
+    }
+    
+}

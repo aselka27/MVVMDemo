@@ -43,6 +43,15 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
+    private let createAccountLabel: UILabel = {
+        let label = UILabel()
+        let attributedString = NSAttributedString(string: "Don't have an account? Sign up", attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, .font : UIFont.systemFont(ofSize: 14, weight: .bold)])
+        label.attributedText = attributedString
+        label.isUserInteractionEnabled = true
+        
+        return label
+    }()
+    
     private let loginButton: UIButton = {
        let button = UIButton()
         button.setTitle("Login", for: .normal)
@@ -69,6 +78,7 @@ class LoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         loginButton.alpha = emailTextField.text?.isEmpty ?? false || passwordTextField.text?.isEmpty ?? false ? 0.5 : 1.0
         loginVM.delegate = self
+        createAccountLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCreateAccount)))
         
     }
 
@@ -76,7 +86,7 @@ class LoginViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
-        
+        view.addSubview(createAccountLabel)
         emailTextField.text = loginVM.email
         passwordTextField.text = loginVM.password
     }
@@ -98,12 +108,22 @@ class LoginViewController: UIViewController {
             make.right.left.equalToSuperview().inset(50)
             make.height.equalTo(35)
         }
+        
+        createAccountLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
     }
     
     @objc private func loginButtonTapped() {
               loginVM.email = emailTextField.text ?? ""
               loginVM.password = passwordTextField.text ?? ""
               loginVM.loginUser()
+    }
+    
+    @objc private func didTapCreateAccount() {
+       
+        navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
  
 }

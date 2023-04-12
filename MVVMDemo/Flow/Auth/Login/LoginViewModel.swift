@@ -60,7 +60,11 @@ class LoginViewModel {
             return 
         }
         //delegate?.loginSuccess(user: user)
+        DispatchQueue.main.async {
+            UserDefaultsService.shared.saveLoggedState(isLogged: true)
+        }
         authCoordinatorDelegate?.successSigningIn(user: user)
+        
         
     }
 }

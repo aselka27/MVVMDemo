@@ -6,7 +6,17 @@
 //
 
 import Foundation
+import Alamofire
 
+
+
+enum NetworkingError: Error {
+    case notFound
+    case serverTroubleShooting
+    case notRegistered
+    case unautuhorized
+    case badData
+}
 
 enum NetworkErrors: Error {
     case failedToDecode(errorDescription: String)
@@ -49,5 +59,27 @@ class NetworkService {
                 print("Error has occured\(error.localizedDescription)")
             }
         }
+    }
+    
+    private func validateError(data: Data?, response: URLResponse?, error: Error?) -> Error? {
+        if let error = error {
+            return error
+        }
+        guard let httpResponse = response as? HTTPURLResponse else {
+            return URLError(.badServerResponse)
+        }
+        switch httpResponse.statusCode {
+        case 200...210:
+            return nil
+        case 401:
+            return NetworkingError.unautuhorized
+        default:
+           return nil
+        }
+    }
+    
+    func transformJSON <T: Decodable>(data: Data?, objectType: T.Type) -> T? {
+        guard let data = data else {return nil}
+        return try? JSONDecoder().decode(T.self, from: data)
     }
 }

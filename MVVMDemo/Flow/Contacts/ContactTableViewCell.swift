@@ -14,14 +14,16 @@ class ContactTableViewCell: UITableViewCell {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Janna D'Ark"
+        //label.text = "Janna D'Ark"
         label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        label.numberOfLines = 0
         return label
     }()
     
     private lazy var usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "jan_ka"
+       // label.text = "jan_ka"
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         return label
     }()
@@ -37,14 +39,23 @@ class ContactTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = ""
+        usernameLabel.text = ""
+    }
+    
     private func setConstraints() {
         nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(2)
             make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-5)
+          
         }
         usernameLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(3)
-            make.left.equalToSuperview().offset(16)
+            make.left.right.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(5)
         }
     }
     

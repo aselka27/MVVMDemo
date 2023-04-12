@@ -34,4 +34,13 @@ class ContactsViewModel {
     func showContacts(userId: Int) {
         mainCoordinator?.showDetailViewWith(userId: userId)
     }
+    
+    func logout() {
+        DispatchQueue.main.async {
+            UserDefaultsService.shared.saveLoggedState(isLogged: false)
+              }
+        
+        mainCoordinator?.delegate?.didFinishMainCoordinator(coordinator: mainCoordinator!)
+      
+    }
 }

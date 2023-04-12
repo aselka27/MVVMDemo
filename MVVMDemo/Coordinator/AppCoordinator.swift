@@ -21,10 +21,10 @@ class AppCoordinator: Coordinator {
     
     
     func start() {
-        if true {
-            runAuthFlow()
-        } else {
+        if UserDefaultsService.shared.isLogged {
             runMainFlow()
+        } else {
+            runAuthFlow()
         }
     }
     

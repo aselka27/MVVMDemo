@@ -1,30 +1,30 @@
 //
-//  ContactsViewController.swift
+//  CommentsViewController.swift
 //  MVVMDemo
 //
-//  Created by саргашкаева on 18.03.2023.
+//  Created by саргашкаева on 20.03.2023.
 //
-
 
 import UIKit
 import SnapKit
 
-class ContactsViewController: UIViewController {
+class CommentsViewController: UIViewController {
     
     
-    private let viewModel: ContactsViewModel
-    
-    
-    private lazy var contactsTableView: UITableView = {
+    let viewModel: CommentsViewModel
+  
+    private lazy var commentsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: ContactTableViewCell.identifier)
         tableView.showsVerticalScrollIndicator = false
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isScrollEnabled = true
         return tableView
     }()
     
-    init(viewModel: ContactsViewModel) {
+    
+    init(viewModel: CommentsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,47 +35,48 @@ class ContactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Contacts"
+        setConstraints()
+        
+        commentsTableView.estimatedRowHeight = 60
+        commentsTableView.rowHeight = UITableView.automaticDimension
+        
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.hidesBackButton = true
-        viewModel.fetchContacts { [weak self] in
+        viewModel.fetchComments { [weak self] in
             DispatchQueue.main.async {
-                self?.contactsTableView.reloadData()
+                self?.commentsTableView.reloadData()
+                self?.title = "\(self?.viewModel.comments?.first?.userId ?? 0)"
             }
         }
-        setConstraints()
     }
-
+    
     private func setConstraints() {
         view.backgroundColor = .white
-        view.addSubview(contactsTableView)
-        contactsTableView.snp.makeConstraints { make in
-            make.bottom.left.right.equalToSuperview()
+        view.addSubview(commentsTableView)
+
+        commentsTableView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+            make.bottom.equalToSuperview()
         }
     }
+
 }
 
 
-extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
+extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contacts?.count ?? 0
+        return viewModel.comments?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.identifier, for: indexPath) as! ContactTableViewCell
-        guard let contact = viewModel.contacts?[indexPath.row] else { return ContactTableViewCell() }
-        cell.configure(with: contact)
+        guard let comment = viewModel.comments?[indexPath.row] else { return ContactTableViewCell() }
+        cell.configureComments(with: comment)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return UITableView.automaticDimension
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let contact = viewModel.contacts?[indexPath.row] else { return }
-        viewModel.showContacts(userId: contact.id)
-    }
-    
 }
+
